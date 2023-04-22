@@ -27,6 +27,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 const config: HardhatUserConfig = {
   solidity: "0.8.17",
   networks: {
+    hardhat: {},
     mainnet: {
       url: process.env.MAINNET_URL || "",
     },
@@ -38,6 +39,9 @@ const config: HardhatUserConfig = {
     },
     mumbai: {
       url: process.env.MUMBAI_URL || "",
+    },
+    goerli: {
+      url: "https://rpc.ankr.com/eth_goerli",
     },
   },
   gasReporter: {
